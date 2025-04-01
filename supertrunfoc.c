@@ -6,10 +6,15 @@
 int main() {
     setlocale(LC_ALL, "Portuguese");
     
-    char carta_titulo1[50], estado1[2], cidade1[50], carta_titulo2[50], estado2[2], cidade2[50];
+char carta_titulo1[50], estado1[2], cidade1[50], carta_titulo2[50], estado2[2], cidade2[50];
     char codigo1[10], codigo2[10]; // Alterado para string para permitir formatos como "A01"
     int populacao1, qnt_pontos1, populacao2, qnt_pontos2;
-    float area1, pib1, area2, pib2;
+    float area1, pib1, area2, pib2, densidade1, densidade2, pib_percapito1, pib_percapito2;
+
+    densidade1 = populacao1/area1;
+    densidade2 = populacao2/area2;
+    pib_percapito1 = pib1/populacao1;
+    pib_percapito2 = pib2/populacao2;
 
     printf("\n \t \t \t Preencha o cadastro");
     printf("\n Carta 1: ");
@@ -29,6 +34,7 @@ int main() {
     printf("\n Número de Pontos Turísticos: ");
     scanf("%d", &qnt_pontos1);
 
+
     printf("\n \t \t \t Preencha o cadastro");
     printf("\n Carta 2: ");
     scanf("%s", carta_titulo2); // Lê string com espaços
@@ -47,6 +53,7 @@ int main() {
     printf("\n Número de Pontos Turísticos: ");
     scanf("%d", &qnt_pontos2);
 
+
     system("cls");
     printf("\n \t \t \t Cadastro Realizado!");
     printf("\n Carta1: %s", carta_titulo1);
@@ -57,6 +64,8 @@ int main() {
     printf("\n Área: %.2f km²", area1);
     printf("\n PIB: %.2f bilhões de reais", pib1);
     printf("\n Número de Pontos Turísticos: %d", qnt_pontos1);
+    printf("\n Densidade Populacional: %.2f", densidade1);
+    printf("\n PIB per capito: %.2f", pib_percapito1);
 
     printf("\n \t \t \t Cadastro Realizado!");
     printf("\n Carta1: %s", carta_titulo2);
@@ -67,6 +76,8 @@ int main() {
     printf("\n Área: %.2f km²", area2);
     printf("\n PIB: %.2f bilhões de reais", pib2);
     printf("\n Número de Pontos Turísticos: %d", qnt_pontos2);
+    printf("\n Densidade Populacional: %.2f", densidade2);
+    printf("\n PIB per capito: %.2f", pib_percapito2);
 
     return 0;
 }
